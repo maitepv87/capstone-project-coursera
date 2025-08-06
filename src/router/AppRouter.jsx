@@ -4,11 +4,11 @@ import { Homepage, BookingPage, ConfirmedBooking } from "../pages";
 export const AppRouter = () => {
   return (
     <Routes>
-      {/* <Route path="/" element={<Homepage />} /> */}
-      {/* <Route path="/booking" element={<BookingPage />} /> */}
+      <Route path="/" element={<Homepage />} />
+      <Route path="/booking" element={<BookingPage />} />
       <Route path="/booking-confirmed" element={<ConfirmedBooking />} />
 
-      <Route path="/" element={<BookingPage />} />
+      {/* <Route path="/" element={<BookingPage />} /> */}
     </Routes>
   );
 };

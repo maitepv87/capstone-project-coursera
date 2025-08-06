@@ -1,0 +1,21 @@
+.specials {
+    padding: 2rem;
+}
+
+.specials-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.specials-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.specials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}

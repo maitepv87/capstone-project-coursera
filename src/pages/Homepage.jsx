@@ -1,17 +1,19 @@
 import {
-  CallToAction,
+  Hero,
   ChicagoSection,
-  CustomersSay,
+  Testimonials,
   Specials,
+  About,
 } from "../components";
 
 export const Homepage = () => {
   return (
     <main>
-      <CallToAction />
+      <Hero />
       <ChicagoSection />
       <Specials />
-      <CustomersSay />
+      <Testimonials />
+      <About />
     </main>
   );
 };
