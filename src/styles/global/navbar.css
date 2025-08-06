@@ -18,3 +18,8 @@
 .navbar li a:hover {
     color: var(--color-primary);
 }
+
+.navbar a.active {
+    font-weight: bold;
+    color: var(--color-accent);
+}

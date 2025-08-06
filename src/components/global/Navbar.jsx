@@ -1,26 +1,39 @@
 import "../../styles/global/navbar.css";
+import { NavLink } from "react-router-dom";
 
 export const Nav = () => {
   return (
-    <nav className="navbar">
+    <nav className="navbar" aria-label="Main site navigation">
       <ul>
         <li>
-          <a href="/home">Home</a>
+          <NavLink to="/" aria-label="Go to homepage">
+            Home
+          </NavLink>
         </li>
         <li>
-          <a href="/about">About</a>
+          <NavLink to="/about" aria-label="Learn more about us">
+            About
+          </NavLink>
         </li>
         <li>
-          <a href="/menu">Menu</a>
+          <NavLink to="/menu" aria-label="View our menu">
+            Menu
+          </NavLink>
         </li>
         <li>
-          <a href="/reservations">Reservations</a>
+          <NavLink to="/reservations" aria-label="Reserve a table">
+            Reservations
+          </NavLink>
         </li>
         <li>
-          <a href="/order-online">Order online</a>
+          <NavLink to="/order-online" aria-label="Order food online">
+            Order online
+          </NavLink>
         </li>
         <li>
-          <a href="/login">Login</a>
+          <NavLink to="/login" aria-label="Log into your account">
+            Login
+          </NavLink>
         </li>
       </ul>
     </nav>

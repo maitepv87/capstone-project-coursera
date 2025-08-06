@@ -1,7 +1,9 @@
 export const Footer = () => {
   return (
     <footer className="footer">
-      <h1>Footer</h1>
+      <p>
+        &copy; 2025 Little Lemon. Crafted with care and Mediterranean flavor.
+      </p>
     </footer>
   );
 };
