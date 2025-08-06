@@ -29,6 +29,17 @@ This project fulfills the semantic layout exercise by:
 
 This structure improves onboarding, accessibility, and emotional clarity across the app.
 
+### 🌐 Metadata & Open Graph Optimization
+
+The `index.html` file includes semantic and editorial metadata to support SEO and social sharing:
+
+- `description`, `author`, and `keywords` for search engine clarity
+- Open Graph tags (`og:title`, `og:description`, `og:image`, `og:url`) for rich previews on social platforms
+- Uses `%PUBLIC_URL%` for build-safe asset referencing
+- Editorial tone aligned with brand voice and Mediterranean warmth
+
+This setup ensures the app appears correctly across search engines, social media, and mobile devices.
+
 ## Getting Started
 
 Clone the repo, run `npm install`, and launch with `npm start`.
