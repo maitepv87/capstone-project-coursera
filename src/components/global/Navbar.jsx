@@ -1,6 +1,8 @@
+import "../../styles/global/navbar.css";
+
 export const Nav = () => {
   return (
-    <nav>
+    <nav className="navbar">
       <ul>
         <li>
           <a href="/home">Home</a>

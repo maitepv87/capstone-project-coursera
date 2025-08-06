@@ -1,0 +1,22 @@
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li a {
+    font-family: 'Markazi Text', serif;
+    color: #333;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.navbar li a:hover {
+    color: #495E57;
+}
