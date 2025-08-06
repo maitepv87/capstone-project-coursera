@@ -1,29 +1,44 @@
-import { useState } from "react";
-import { useContext } from "react";
+import { useState, useContext, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { BookingContext } from "../../context";
 import { useFormReducer } from "../../hooks/useFormReducer";
+import { updateTimes } from "../../context/bookingActions";
+import { TextField, SelectField, Button } from "../formElements";
+import { validateField } from "../../utils";
 
 const initialFormState = { date: "", time: "", guests: 1, occasion: "" };
 
-export const BookingForm = () => {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [guests, setGuests] = useState(1);
-  const [occasion, setOccasion] = useState("");
-  const [availableTimes] = useState([
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-  ]);
+const initialErrors = { date: "", time: "", guests: null, occasion: "" };
 
+export const BookingForm = () => {
   const { state: contextState, dispatch } = useContext(BookingContext);
   const { state, onChange, onReset } = useFormReducer(initialFormState);
+  const [errors, setErrors] = useState(initialErrors);
+  const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const hasFetchedTimes = useRef(false);
+
+  const handleOpen = () => {
+    if (!hasFetchedTimes.current) {
+      updateTimes(dispatch, state.date);
+      hasFetchedTimes.current = true;
+    }
+  };
+
+  const availableReservationTimes = contextState.availableTimes;
+
+  const handleBlur = (event) => {
+    const { name, value, type, checked } = event.target;
+    setErrors((prev) => ({
+      ...prev,
+      [name]: validateField(name, type === "checkbox" ? checked : value),
+    }));
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log({ date, time, guests, occasion });
+
+    navigate("/booking-confirmed");
   };
 
   return (
@@ -31,49 +46,57 @@ export const BookingForm = () => {
       onSubmit={handleSubmit}
       style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
     >
-      <label htmlFor="res-date">Choose date</label>
-      <input
+      <TextField
+        label="Choose date"
+        name="date"
         type="date"
-        id="res-date"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
+        value={state.date}
+        onChange={onChange}
+        onBlur={handleBlur}
+        error={errors.date}
+        required
       />
 
-      <label htmlFor="res-time">Choose time</label>
-      <select
-        id="res-time"
-        value={time}
-        onChange={(e) => setTime(e.target.value)}
-      >
-        {availableTimes.map((slot) => (
-          <option key={slot} value={slot}>
-            {slot}
-          </option>
-        ))}
-      </select>
+      <SelectField
+        label="Choose time"
+        name="time"
+        value={state.time}
+        onChange={onChange}
+        onBlur={handleBlur}
+        onOpen={handleOpen}
+        options={availableReservationTimes}
+        error={errors.time}
+        required
+      />
 
-      <label htmlFor="guests">Number of guests</label>
-      <input
+      <TextField
+        label="Number of guests"
+        name="guests"
         type="number"
-        id="guests"
         min="1"
         max="10"
-        value={guests}
-        onChange={(e) => setGuests(parseInt(e.target.value))}
+        value={state.guests}
+        onChange={onChange}
+        onBlur={handleBlur}
+        error={errors.guests}
+        required
       />
 
-      <label htmlFor="occasion">Occasion</label>
-      <select
-        id="occasion"
-        value={occasion}
-        onChange={(e) => setOccasion(e.target.value)}
-      >
-        <option value="">Select</option>
-        <option value="Birthday">Birthday</option>
-        <option value="Anniversary">Anniversary</option>
-      </select>
+      <SelectField
+        label="Occasion"
+        name="occasion"
+        value={state.occasion}
+        onChange={onChange}
+        onBlur={handleBlur}
+        options={[
+          { label: "Birthday", value: "Birthday" },
+          { label: "Engagement", value: "Engagement" },
+          { label: "Anniversary", value: "Anniversary" },
+        ]}
+        error={errors.occasion}
+      />
 
-      <button type="submit">Submit reservation</button>
+      <Button type="submit">Submit reservation</Button>
     </form>
   );
 };
