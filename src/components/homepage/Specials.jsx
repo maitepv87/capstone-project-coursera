@@ -3,7 +3,7 @@ import { SpecialCard } from "./SpecialCard";
 import bruchetta from "../../assets/images/bruchetta.svg";
 import greekSalad from "../../assets/images/greek-salad.jpg";
 import lemonDessert from "../../assets/images/lemon-dessert.jpg";
-import { Button } from "../formElements/Button";
+import { Button } from "../formElements";
 
 const specials = [
   {
@@ -31,9 +31,11 @@ const specials = [
 
 export const Specials = () => {
   return (
-    <section className="specials">
+    <section className="specials" aria-labelledby="specials-title">
       <div className="specials-header">
-        <h1 className="specials-title">Specials</h1>
+        <h2 id="specials-title" className="specials-title">
+          This Week's Specials!
+        </h2>
         <Button type="button">Online Menu</Button>
       </div>
 

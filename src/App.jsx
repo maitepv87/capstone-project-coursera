@@ -10,7 +10,9 @@ function App() {
       <BookingProvider>
         <BrowserRouter>
           <Header />
-          <AppRouter />
+          <main className="main-content">
+            <AppRouter />
+          </main>
           <Footer />
         </BrowserRouter>
       </BookingProvider>

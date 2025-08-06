@@ -7,7 +7,6 @@ export const SpecialCard = ({
   price,
   description,
   ctaLabel = "Order a delivery",
-  //   onCtaClick,
 }) => {
   return (
     <article className="specialCard">
@@ -21,7 +20,7 @@ export const SpecialCard = ({
 
         <p className="specialCard-description">{description}</p>
 
-        <p className="specialCard-cta">{ctaLabel}</p>
+        <button className="specialCard-cta">{ctaLabel}</button>
       </div>
     </article>
   );

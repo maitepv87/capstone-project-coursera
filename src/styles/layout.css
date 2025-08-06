@@ -1,21 +1,33 @@
+:root {
+    --color-primary: #495E57;
+    --color-accent: #F4CE14;
+    --color-text: #333;
+    --font-title: 'Markazi Text', serif;
+    --font-body: 'Karla', sans-serif;
+}
+
 .layout {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    gap: 1.5rem;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
 }
 
 h1,
 h2,
 h3 {
-    font-family: 'Markazi Text', serif;
-    color: #495E57;
+    font-family: var(--font-title);
+    color: var(--color-primary);
     margin-bottom: 0.5rem;
 }
 
 p,
 span {
-    font-family: 'Karla', sans-serif;
-    color: #333;
+    font-family: var(--font-body);
+    color: var(--color-text);
     line-height: 1.6;
 }

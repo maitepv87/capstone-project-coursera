@@ -29,12 +29,12 @@ export const Button = ({
 }) => {
   const baseStyle = {
     padding: "0.6rem 1.5rem",
-    background: "#1976d2",
-    color: "#fff",
+    background: "#F4CE14",
+    color: "#333",
     border: "none",
-    borderRadius: "6px",
+    borderRadius: "16px",
     fontSize: "1rem",
-    fontWeight: 500,
+    fontWeight: 600,
     cursor: disabled ? "not-allowed" : "pointer",
     opacity: disabled ? 0.6 : 1,
     transition: "background 0.2s, opacity 0.2s",
