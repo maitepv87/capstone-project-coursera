@@ -105,3 +105,19 @@ This section fulfills the “Defining the Bookings page” exercise by creating 
 > 🧾 _This implementation exceeds the exercise requirements by modularizing form logic, styling, and validation. It’s ready for API integration and unit testing in future steps._
 
 ---
+
+# Clone the repository
+
+git clone https://github.com/maitepv87/littlelemon-capstone-project.git
+
+# Navigate into the project folder
+
+cd littlelemon-capstone-project
+
+# Install dependencies
+
+npm install
+
+# Start the development server
+
+npm start
