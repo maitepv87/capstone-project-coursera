@@ -19,34 +19,23 @@
  *   Submit
  * </Button>
  */
+
+import styles from "./Button.module.css";
+
 export const Button = ({
   children,
   type = "button",
   disabled = false,
   onClick,
-  style = {},
+  className = "",
   ...props
 }) => {
-  const baseStyle = {
-    padding: "0.6rem 1.5rem",
-    background: "#F4CE14",
-    color: "#333",
-    border: "none",
-    borderRadius: "16px",
-    fontSize: "1rem",
-    fontWeight: 600,
-    cursor: disabled ? "not-allowed" : "pointer",
-    opacity: disabled ? 0.6 : 1,
-    transition: "background 0.2s, opacity 0.2s",
-    ...style,
-  };
-
   return (
     <button
       type={type}
       disabled={disabled}
       onClick={onClick}
-      style={baseStyle}
+      className={`${styles.button} ${className}`}
       {...props}
     >
       {children}

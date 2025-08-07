@@ -8,12 +8,6 @@
     color: var(--color-text);
 }
 
-/* Main content wrapper */
-.main-content {
-    flex: 1;
-    padding: 1.5rem;
-}
-
 /* Typography */
 h1,
 h2,

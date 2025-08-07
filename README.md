@@ -30,7 +30,7 @@ This section fulfills the semantic layout exercise by:
 - Wrapping routed content inside `<main>` for clarity and accessibility
 - Providing editorial closure in `<footer>`
 
-> 🧾 *This structure improves onboarding, accessibility, and emotional clarity across the app.*
+> 🧾 _This structure improves onboarding, accessibility, and emotional clarity across the app._
 
 ---
 
@@ -43,7 +43,7 @@ The `index.html` file includes semantic and editorial metadata to support SEO an
 - Uses `%PUBLIC_URL%` for build-safe asset referencing
 - Editorial tone aligned with brand voice and Mediterranean warmth
 
-> 🧾 *This setup ensures the app appears correctly across search engines, social media, and mobile devices.*
+> 🧾 _This setup ensures the app appears correctly across search engines, social media, and mobile devices._
 
 ---
 
@@ -58,7 +58,7 @@ This layout system transforms wireframes into responsive, reusable sections usin
 - Relative units (`rem`, `%`, `vh`) for fluid scaling
 - Modular CSS per component + shared rules in `layout.css`
 
-> 🧾 *Layout decisions support emotional readability and onboarding clarity across screen sizes.*
+> 🧾 _Layout decisions support emotional readability and onboarding clarity across screen sizes._
 
 ---
 
@@ -74,8 +74,34 @@ This section establishes the visual styling system for the Little Lemon web app,
 - **Color System**: Used brand-aligned colors from Figma, applied via CSS variables and tokens
 - **Shadows & Borders**: Rounded corners and soft shadows applied selectively for warmth and depth
 
-> 🧾 *Styling choices reflect Mediterranean warmth and editorial clarity across components.*
+> 🧾 _Styling choices reflect Mediterranean warmth and editorial clarity across components._
 
 ---
 
+## 🧩 Booking Page & Form
 
+This section fulfills the “Defining the Bookings page” exercise by creating a modular, accessible, and editorially documented booking flow.
+
+### ✅ Components
+
+- `BookingPage`: Contains the page layout and title
+- `BookingForm`: Controlled form with modular fields
+
+### 🧱 Form Fields
+
+- `Date`: `<input type="date">`
+- `Time`: `<select>` populated from context
+- `Guests`: `<input type="number">`
+- `Occasion`: `<select>` with fixed options
+- `Submit`: `<button type="submit">`
+
+### ⚙️ Behavior
+
+- Controlled state via `useFormReducer`
+- Validation on blur with emotional feedback
+- Time options fetched from context on open
+- Navigation to `/booking-confirmed` on submit
+
+> 🧾 _This implementation exceeds the exercise requirements by modularizing form logic, styling, and validation. It’s ready for API integration and unit testing in future steps._
+
+---

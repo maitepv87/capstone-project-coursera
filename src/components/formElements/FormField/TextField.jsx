@@ -1,64 +1,62 @@
 /**
- * SelectField Component
+ * TextField Component
  *
- * This component provides a reusable, accessible <select> dropdown for forms.
- * It is designed with ARIA support, label association, error messaging, and editorial clarity.
+ * This component provides a reusable, accessible text input field for forms.
+ * It supports ARIA attributes, clear labeling, error messaging, and progressive validation.
  *
  * Why this approach?
- * - Accessibility: ARIA attributes ensure screen reader support for required fields and errors.
- * - Usability: Initial placeholder is hidden but accessible. Optional required asterisk supports editorial clarity.
- * - Flexibility: Custom label styling, dynamic option rendering, error messaging, and external style overrides.
- * - Maintainability: Clear prop interface, safe defaults, and internal documentation for future developers.
- * - Extendibility: Supports external styles via containerStyle, selectStyle, and errorStyle props for system-level consistency.
+ * - Accessibility: Uses ARIA attributes and proper label associations for screen readers.
+ * - Usability: Shows validation errors only after blur or submit, never on every keystroke.
+ * - Maintainability: Clear prop interface with flexible style overrides and editorial comments for future developers.
+ * - Extendibility: Allows external styles via containerStyle, inputStyle, labelStyle, and errorStyle props for visual consistency across design systems.
+ *
+ * Supported input types:
+ * - "text", "email", "password", "search", "url", "tel", "number"
+ * These follow native HTML input behavior and validation patterns.
  *
  * Example usage:
- * <SelectField
- *   label="Country"
- *   name="country"
- *   value={formState.country}
+ * <TextField
+ *   label="First Name"
+ *   name="firstName"
+ *   type="text"
+ *   value={formState.firstName}
  *   onChange={handleChange}
- *   onBlur={() => handleBlur("country", formState.country)}
- *   options={[{ label: "USA", value: "us" }, { label: "Canada", value: "ca" }]}
- *   error={errors.country}
+ *   onBlur={() => handleBlur("firstName", formState.firstName)}
+ *   error={errors.firstName}
  *   required
  *   showAsterisk
- *   selectStyle={{ background: "#f4f4f4" }}
+ *   placeholder="Enter your first name"
+ *   inputStyle={{ background: "#f4f4f4" }}
  *   containerStyle={{ maxWidth: 600 }}
- *   errorStyle={{ color: "orange" }}
  * />
- *
- * Accessibility notes:
- * - Uses aria-labelledby to link the label to the select field.
- * - aria-required and aria-invalid reflect the validation state.
- * - aria-describedby links to the error message only when present.
- * - Placeholder option is hidden from selection but visible to screen readers.
  */
-export const SelectField = ({
+
+import styles from "./FormField.module.css";
+
+export const TextField = ({
   label,
   name,
+  type = "text",
   value,
   onChange,
   onBlur,
-  options = [],
-  placeholder = "Select an option",
   error,
+  placeholder,
   required = false,
   showAsterisk = false,
   labelClassName = "",
   labelStyle = {},
   containerStyle = {},
-  selectStyle = {},
+  inputStyle = {},
   errorStyle = {},
   ...props
 }) => {
   const fieldId = `${name}Field`;
   const errorId = `${name}Error`;
 
-  const { onOpen, ...filteredProps } = props;
-
   return (
     <div
-      className="SelectField"
+      className={styles.fieldContainer}
       role="group"
       aria-labelledby={`fieldIdLabel`}
       style={{
@@ -73,7 +71,7 @@ export const SelectField = ({
       <label
         id={`fieldIdLabel`}
         htmlFor={fieldId}
-        className={labelClassName}
+        className={styles.label}
         style={{
           marginBottom: "0.5rem",
           fontWeight: 500,
@@ -89,16 +87,14 @@ export const SelectField = ({
           </span>
         )}
       </label>
-      <select
+      <input
         id={fieldId}
         name={name}
+        type={type}
         value={value}
         onChange={onChange}
         onBlur={onBlur}
-        onFocus={(e) => {
-          onOpen?.(e);
-        }}
-        required={required}
+        placeholder={placeholder}
         aria-required={required}
         aria-invalid={!!error}
         aria-describedby={error ? errorId : undefined}
@@ -110,19 +106,11 @@ export const SelectField = ({
           background: error ? "#fff6f6" : "#fff",
           outline: "none",
           transition: "border-color 0.2s ease",
-          ...selectStyle,
+          ...inputStyle,
         }}
-        {...filteredProps}
-      >
-        <option value="" disabled hidden>
-          {placeholder}
-        </option>
-        {options.map((opt) => (
-          <option key={opt.value} value={opt.value}>
-            {opt.label}
-          </option>
-        ))}
-      </select>
+        {...props}
+        className={`${styles.input} ${error ? styles.inputError : ""}`}
+      />
       {error && (
         <p
           id={errorId}
@@ -137,6 +125,7 @@ export const SelectField = ({
             ...errorStyle,
           }}
           {...props}
+          className={styles.errorMessage}
         >
           {error}
         </p>

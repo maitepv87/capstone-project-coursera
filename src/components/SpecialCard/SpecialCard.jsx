@@ -1,4 +1,5 @@
 import styles from "./SpecialCard.module.css";
+import { Button } from "../formElements";
 
 export const SpecialCard = ({
   imageSrc,
@@ -20,7 +21,7 @@ export const SpecialCard = ({
 
         <p className={styles.specialCardDescription}>{description}</p>
 
-        <button className={styles.specialCardCta}>{ctaLabel}</button>
+        <Button type="button"> {ctaLabel}</Button>
       </div>
     </article>
   );

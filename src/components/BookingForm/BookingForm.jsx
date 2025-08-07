@@ -42,12 +42,9 @@ export const BookingForm = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
-    >
+    <form onSubmit={handleSubmit}>
       <TextField
-        label="Choose date"
+        label="Date"
         name="date"
         type="date"
         value={state.date}
@@ -58,7 +55,7 @@ export const BookingForm = () => {
       />
 
       <SelectField
-        label="Choose time"
+        label="Time"
         name="time"
         value={state.time}
         onChange={onChange}
@@ -70,7 +67,7 @@ export const BookingForm = () => {
       />
 
       <TextField
-        label="Number of guests"
+        label="Number of Diners"
         name="guests"
         type="number"
         min="1"

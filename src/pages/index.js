@@ -1,3 +1,3 @@
-export * from "./BookingPage";
+export * from "./BookingPage/BookingPage";
 export * from "./ConfirmedBooking";
-export * from "./Homepage";
+export * from "./Homepage/Homepage";

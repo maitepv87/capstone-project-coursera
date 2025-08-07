@@ -1,4 +1,4 @@
-export * from "./booking/BookingForm";
+export * from "./BookingForm/BookingForm";
 
 export * from "./About/About";
 export * from "./Chicago/Chicago";
