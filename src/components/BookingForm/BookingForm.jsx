@@ -1,8 +1,6 @@
-import { useState, useContext, useRef } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { BookingContext } from "../../context";
 import { useFormReducer } from "../../hooks/useFormReducer";
-import { updateTimes } from "../../context/bookingActions";
 import { TextField, SelectField, Button } from "../formElements";
 import { validateField } from "../../utils";
 
@@ -10,22 +8,15 @@ const initialFormState = { date: "", time: "", guests: 1, occasion: "" };
 
 const initialErrors = { date: "", time: "", guests: null, occasion: "" };
 
-export const BookingForm = () => {
-  const { state: contextState, dispatch } = useContext(BookingContext);
+export const BookingForm = ({ availableTimes, dispatch }) => {
   const { state, onChange, onReset } = useFormReducer(initialFormState);
   const [errors, setErrors] = useState(initialErrors);
   const navigate = useNavigate();
 
-  const hasFetchedTimes = useRef(false);
-
-  const handleOpen = () => {
-    if (!hasFetchedTimes.current) {
-      updateTimes(dispatch, state.date);
-      hasFetchedTimes.current = true;
-    }
+  const handleDateChange = (event) => {
+    onChange(event);
+    dispatch({ date: event.target.value });
   };
-
-  const availableReservationTimes = contextState.availableTimes;
 
   const handleBlur = (event) => {
     const { name, value, type, checked } = event.target;
@@ -37,8 +28,8 @@ export const BookingForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     navigate("/booking-confirmed");
+    onReset();
   };
 
   return (
@@ -48,7 +39,7 @@ export const BookingForm = () => {
         name="date"
         type="date"
         value={state.date}
-        onChange={onChange}
+        onChange={handleDateChange}
         onBlur={handleBlur}
         error={errors.date}
         required
@@ -60,8 +51,7 @@ export const BookingForm = () => {
         value={state.time}
         onChange={onChange}
         onBlur={handleBlur}
-        onOpen={handleOpen}
-        options={availableReservationTimes}
+        options={availableTimes.map((time) => ({ label: time, value: time }))}
         error={errors.time}
         required
       />

@@ -1,8 +1,11 @@
+import { getAvailableTimes } from "../api/getAvailableTimes";
+
 export const updateTimes = async (dispatch, date) => {
   dispatch({ type: "LOADING" });
 
   try {
-    const availableTimes = await window.fetchAPI(date);
+    // const availableTimes = await window.fetchAPI(date);
+    const availableTimes = getAvailableTimes(date);
     dispatch({
       type: "FETCH_AVAILABLE_TIMES_SUCCESS",
       payload: availableTimes,

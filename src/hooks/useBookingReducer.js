@@ -1,7 +1,8 @@
 import { useReducer } from "react";
+import { initializeTimes } from "../utils";
 
 const initialState = {
-  availableTimes: [],
+  availableTimes: initializeTimes(),
   isLoading: true,
   errorAvailableTimes: null,
   errorSubmit: null,
