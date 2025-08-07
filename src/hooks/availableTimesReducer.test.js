@@ -1,12 +1,17 @@
 import { initializeTimes, updateTimes } from "./availableTimesReducer";
 
-test("initializeTimes returns correct default times", () => {
+test("initializeTimes returns available times for today", () => {
   const times = initializeTimes();
-  expect(times).toEqual(["17:00", "18:00", "19:00", "20:00", "21:00"]);
+  expect(Array.isArray(times)).toBe(true);
+  expect(times.length).toBeGreaterThan(0);
+  expect(times.every((t) => typeof t === "string")).toBe(true);
 });
 
-test("updateTimes returns same times regardless of date", () => {
-  const initial = ["17:00", "18:00"];
-  const result = updateTimes(initial, { date: "2025-08-07" });
-  expect(result).toEqual(["17:00", "18:00", "19:00", "20:00", "21:00"]);
+test("updateTimes returns available times for a given date", () => {
+  const mockDate = "2025-08-07";
+  const result = updateTimes([], { date: mockDate });
+
+  expect(Array.isArray(result)).toBe(true);
+  expect(result.length).toBeGreaterThan(0);
+  expect(result.every((t) => typeof t === "string")).toBe(true);
 });
