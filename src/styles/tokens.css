@@ -1,41 +1,4 @@
-:root {
-    /* Colors */
-    --color-primary: #495E57;
-    --color-accent: #F4CE14;
-    --color-text-light: #ffffff;
-    --color-text-dark: #333;
-    --color-muted: #666;
-    --color-price: #EE9972;
-    --color-card-bg: #ffffff;
-    --color-cta-bg: #F4CE14;
-    --color-cta-text: #333;
-
-    /* Fonts */
-    --font-heading: 'Karla', sans-serif;
-    --font-body: 'Markazi Text', serif;
-
-    /* Font sizes */
-    --font-size-h1: 2.5rem;
-    --font-size-h2: 1.5rem;
-    --font-size-body: 1rem;
-    --font-size-title: 2rem;
-    --font-size-card-title: 1.25rem;
-    --font-size-card-price: 1rem;
-    --font-size-card-body: 0.95rem;
-    --font-size-card-cta: 0.9rem;
-
-    /* Spacing */
-    --spacing-tight: 0.25rem;
-    --spacing-regular: 1rem;
-    --spacing-loose: 2rem;
-    --spacing-xloose: 3rem;
-    /* ← nuevo token para aire lateral */
-    --spacing-section: 2rem;
-    --spacing-card: 1rem;
-    --spacing-grid: 2rem;
-
-
-    /* Breakpoints */
-    --bp-md: 768px;
-    --bp-lg: 1024px;
-}
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/breakpoints.css";

@@ -1,40 +1,26 @@
 import "../../styles/global/navbar.css";
 import { NavLink } from "react-router-dom";
 
+const navItems = [
+  { path: "/", label: "Home", aria: "Go to homepage" },
+  { path: "/about", label: "About", aria: "Learn more about us" },
+  { path: "/menu", label: "Menu", aria: "View our menu" },
+  { path: "/reservations", label: "Reservations", aria: "Reserve a table" },
+  { path: "/order-online", label: "Order online", aria: "Order food online" },
+  { path: "/login", label: "Login", aria: "Log into your account" },
+];
+
 export const Nav = () => {
   return (
     <nav className="navbar" aria-label="Main site navigation">
       <ul>
-        <li>
-          <NavLink to="/" aria-label="Go to homepage">
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/about" aria-label="Learn more about us">
-            About
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/menu" aria-label="View our menu">
-            Menu
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/reservations" aria-label="Reserve a table">
-            Reservations
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/order-online" aria-label="Order food online">
-            Order online
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/login" aria-label="Log into your account">
-            Login
-          </NavLink>
-        </li>
+        {navItems.map(({ path, label, aria }) => (
+          <li key={path}>
+            <NavLink to={path} aria-label={aria}>
+              {label}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );

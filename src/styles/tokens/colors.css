@@ -1,0 +1,11 @@
+:root {
+    --color-primary: #495E57;
+    --color-accent: #F4CE14;
+    --color-text-light: #ffffff;
+    --color-text-dark: #333;
+    --color-muted: #666;
+    --color-price: #EE9972;
+    --color-card-bg: #ffffff;
+    --color-cta-bg: #F4CE14;
+    --color-cta-text: #333;
+}

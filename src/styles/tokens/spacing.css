@@ -1,0 +1,9 @@
+:root {
+    --spacing-tight: 0.25rem;
+    --spacing-regular: 1rem;
+    --spacing-loose: 2rem;
+    --spacing-xloose: 3rem;
+    --spacing-section: 2rem;
+    --spacing-card: 1rem;
+    --spacing-grid: 2rem;
+}
