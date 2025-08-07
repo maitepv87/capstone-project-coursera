@@ -1,0 +1,27 @@
+.confirmation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 80vh;
+    padding: var(--spacing-xl);
+    background-color: var(--color-success-bg, #e6f4ea);
+    color: var(--color-success-text, #2e7d32);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    font-family: var(--font-body);
+    text-align: center;
+}
+
+.confirmation h1 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+    font-weight: var(--font-weight-bold);
+}
+
+.confirmation p {
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+    max-width: 40ch;
+}
