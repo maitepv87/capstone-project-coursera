@@ -27,8 +27,26 @@ export const BookingForm = ({ availableTimes, dispatch }) => {
     }));
   };
 
+  const isFormValid =
+    Object.values(errors).every((err) => err === "") &&
+    Object.values(state).every((val) => val !== "" && val !== null);
+
+    
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    const newErrors = {
+      date: validateField("date", state.date),
+      time: validateField("time", state.time),
+      guests: validateField("guests", state.guests),
+      occasion: validateField("occasion", state.occasion),
+    };
+
+    setErrors(newErrors);
+
+    const hasErrors = Object.values(newErrors).some((err) => err);
+    if (hasErrors) return;
+
     const success = submitAPI(state);
 
     if (success) {
@@ -88,9 +106,12 @@ export const BookingForm = ({ availableTimes, dispatch }) => {
           { label: "Anniversary", value: "Anniversary" },
         ]}
         error={errors.occasion}
+        required
       />
 
-      <Button type="submit">Submit reservation</Button>
+      <Button type="submit" disabled={!isFormValid}>
+        Submit reservation
+      </Button>
     </form>
   );
 };
