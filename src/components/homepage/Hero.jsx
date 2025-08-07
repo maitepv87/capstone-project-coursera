@@ -1,8 +1,15 @@
 import "../../styles/homepage/Hero.css";
 import { Button } from "../formElements";
 import restauranfood from "../../assets/images/restauranfood.jpg";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/booking");
+  };
+
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-text">
@@ -12,7 +19,9 @@ export const Hero = () => {
           We are a family owned Mediterranean restaurant, focused on traditional
           recipes served with a modern twist.
         </p>
-        <Button type="button">Reserve a Table</Button>
+        <Button type="button" onClick={handleClick}>
+          Reserve a Table
+        </Button>
       </div>
       <div className="hero-image-wrapper">
         <img

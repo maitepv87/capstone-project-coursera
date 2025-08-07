@@ -31,7 +31,10 @@ const specials = [
 
 export const Specials = () => {
   return (
-    <section className="specials" aria-labelledby="specials-title">
+    <section
+      className="specials section-wrapper"
+      aria-labelledby="specials-title"
+    >
       <div className="specials-header">
         <h2 id="specials-title" className="specials-title">
           This Week's Specials!

@@ -40,6 +40,17 @@ The `index.html` file includes semantic and editorial metadata to support SEO an
 
 This setup ensures the app appears correctly across search engines, social media, and mobile devices.
 
+## 🧱 CSS Layout Setup
+
+This layout system transforms wireframes into responsive, reusable sections using semantic HTML and Flexbox. It adapts fluidly across devices, ensuring clarity and warmth.
+
+### ✅ Key Decisions
+
+- Flexbox layout with `gap`, `justify-content`, and `align-items`
+- Media queries at `768px` for mobile stacking
+- Relative units (`rem`, `%`, `vh`) for fluid scaling
+- Modular CSS per component + shared rules in `layout.css`
+
 ## Getting Started
 
 Clone the repo, run `npm install`, and launch with `npm start`.

@@ -1,21 +1,6 @@
-:root {
-  --color-card-bg: #ffffff;
-  --color-card-text: #333;
-  --color-card-muted: #666;
-  --color-price: #EE9972;
-
-  --font-size-title: 2rem;
-  --font-size-card-title: 1.2rem;
-  --font-size-card-body: 0.95rem;
-  --font-size-card-cta: 0.9rem;
-
-  --spacing-section: 2rem;
-  --spacing-card: 1rem;
-  --spacing-grid: 2rem;
-}
-
 .specials {
-  padding: var(--spacing-section);
+  padding: var(--spacing-section) var(--spacing-regular);
+  /* Mobile first */
 }
 
 .specials-header {
@@ -36,54 +21,9 @@
   gap: var(--spacing-grid);
 }
 
-.specialCard {
-  background-color: var(--color-card-bg);
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.specialCard-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.specialCard-content {
-  padding: var(--spacing-card);
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.specialCard-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.specialCard-name {
-  font-size: var(--font-size-card-title);
-  font-weight: 600;
-}
-
-.specialCard-price {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-price);
-}
-
-.specialCard-description {
-  font-size: var(--font-size-card-body);
-  color: var(--color-card-muted);
-}
-
-.specialCard-cta {
-  margin-top: auto;
-  font-size: var(--font-size-card-cta);
-  font-weight: 500;
-  color: var(--color-card-text);
+@media (min-width: var(--bp-md)) {
+  .specials {
+    padding: var(--spacing-section) var(--spacing-xloose);
+    /* Desktop lateral */
+  }
 }
