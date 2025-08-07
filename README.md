@@ -78,9 +78,4 @@ This section establishes the visual styling system for the Little Lemon web app,
 
 ---
 
-## 🛠️ Getting Started
 
-Clone the repo, run `npm install`, and launch with:
-
-```bash
-npm start

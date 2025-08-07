@@ -1,0 +1,10 @@
+.testimonials {
+  padding: var(--spacing-loose);
+  background-color: var(--color-background-light);
+  text-align: center;
+}
+
+.testimonials h1 {
+  font-size: var(--font-size-title);
+  font-weight: bold;
+}

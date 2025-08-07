@@ -1,0 +1,29 @@
+.specials {
+  padding: var(--spacing-section) var(--spacing-regular);
+  /* Mobile first */
+}
+
+.specialsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-section);
+}
+
+.specialsTitle {
+  font-size: var(--font-size-title);
+  font-weight: bold;
+}
+
+.specialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-grid);
+}
+
+@media (min-width: var(--bp-md)) {
+  .specials {
+    padding: var(--spacing-section) var(--spacing-xloose);
+    /* Desktop lateral */
+  }
+}

@@ -1,11 +1,12 @@
 export * from "./booking/BookingForm";
 
-export * from "./homepage/About";
-export * from "./homepage/ChicagoSection";
-export * from "./homepage/Hero";
-export * from "./homepage/Specials";
-export * from "./homepage/Testimonials";
+export * from "./About/About";
+export * from "./Chicago/Chicago";
+export * from "./Hero/Hero";
+export * from "./Specials/Specials";
+export * from "./SpecialCard/SpecialCard";
+export * from "./Testimonials/Testimonials";
 
-export * from "./global/Footer";
-export * from "./global/Header";
-export * from "./global/Navbar";
+export * from "./Footer/Footer";
+export * from "./Header/Header";
+export * from "./Navbar/Navbar";
