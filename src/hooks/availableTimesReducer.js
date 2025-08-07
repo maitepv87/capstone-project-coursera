@@ -1,12 +1,11 @@
-export const initializeTimes = () => [
-  "17:00",
-  "18:00",
-  "19:00",
-  "20:00",
-  "21:00",
-];
+import { fetchAPI } from "../utils/api";
+
+export const initializeTimes = () => {
+  const today = new Date();
+  return fetchAPI(today);
+};
 
 export const updateTimes = (state, action) => {
-  const { date } = action;
-  return initializeTimes();
+  const selectedDate = new Date(action.date);
+  return fetchAPI(selectedDate);
 };

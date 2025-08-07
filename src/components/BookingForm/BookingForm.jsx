@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useFormReducer } from "../../hooks/useFormReducer";
 import { TextField, SelectField, Button } from "../formElements";
 import { validateField } from "../../utils";
+import { submitAPI } from "../../utils/api";
 
 const initialFormState = { date: "", time: "", guests: 1, occasion: "" };
 
@@ -28,8 +29,14 @@ export const BookingForm = ({ availableTimes, dispatch }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    navigate("/booking-confirmed");
-    onReset();
+    const success = submitAPI(state);
+
+    if (success) {
+      navigate("/booking-confirmed");
+      onReset();
+    } else {
+      alert("Reservation failed. Please try again.");
+    }
   };
 
   return (
