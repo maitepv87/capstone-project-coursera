@@ -4,6 +4,9 @@ Final project for the Meta Frontend Developer Specialization on Coursera.
 
 This React-based application lays the groundwork for a table reservation feature on the Little Lemon restaurant website. The project starts from a customized boilerplate, with a cleaned structure and developer tooling optimized for clarity, modularity, and workflow efficiency.
 
+
+![Capstone Project Screenshot](./src/assets/Screenshot.png)
+
 ---
 
 ## Key Features
