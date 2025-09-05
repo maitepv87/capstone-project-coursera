@@ -1,4 +1,4 @@
-# 🍋 Little Lemon Capstone Project
+# Capstone Project
 
 Final project for the Meta Frontend Developer Specialization on Coursera.
 
@@ -6,7 +6,7 @@ This React-based application lays the groundwork for a table reservation feature
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 - React project initialized via `create-react-app`
 - Removal of default boilerplate elements (`App.js`, `logo.svg`)
@@ -18,7 +18,7 @@ This React-based application lays the groundwork for a table reservation feature
 
 ---
 
-## ✅ Semantic HTML Foundation
+## Semantic HTML Foundation
 
 This section fulfills the semantic layout exercise by:
 
@@ -30,11 +30,11 @@ This section fulfills the semantic layout exercise by:
 - Wrapping routed content inside `<main>` for clarity and accessibility
 - Providing editorial closure in `<footer>`
 
-> 🧾 _This structure improves onboarding, accessibility, and emotional clarity across the app._
+> _This structure improves onboarding, accessibility, and emotional clarity across the app._
 
 ---
 
-## 🌐 Metadata & Open Graph Optimization
+## Metadata & Open Graph Optimization
 
 The `index.html` file includes semantic and editorial metadata to support SEO and social sharing:
 
@@ -43,30 +43,30 @@ The `index.html` file includes semantic and editorial metadata to support SEO an
 - Uses `%PUBLIC_URL%` for build-safe asset referencing
 - Editorial tone aligned with brand voice and Mediterranean warmth
 
-> 🧾 _This setup ensures the app appears correctly across search engines, social media, and mobile devices._
+> _This setup ensures the app appears correctly across search engines, social media, and mobile devices._
 
 ---
 
-## 🧱 CSS Layout System
+## CSS Layout System
 
 This layout system transforms wireframes into responsive, reusable sections using semantic HTML and Flexbox. It adapts fluidly across devices, ensuring clarity and warmth.
 
-### 🔧 Key Layout Decisions
+### Key Layout Decisions
 
 - Flexbox layout with `gap`, `justify-content`, and `align-items`
 - Media queries at `768px` for mobile stacking
 - Relative units (`rem`, `%`, `vh`) for fluid scaling
 - Modular CSS per component + shared rules in `layout.css`
 
-> 🧾 _Layout decisions support emotional readability and onboarding clarity across screen sizes._
+> _Layout decisions support emotional readability and onboarding clarity across screen sizes._
 
 ---
 
-## 🎨 Visual Styling System
+## Visual Styling System
 
 This section establishes the visual styling system for the Little Lemon web app, based on the Figma design and editorial tone. It defines reusable CSS rules for core HTML elements, ensuring consistency, warmth, and accessibility.
 
-### 🔧 Key Styling Decisions
+### Key Styling Decisions
 
 - **Typography**: Styled `h1–h6`, `p`, and `span` with responsive `font-size`, `line-height`, and editorial spacing
 - **Navigation**: Styled `nav`, `ul`, and `li` with spacing, hover states, and semantic clarity
@@ -74,20 +74,20 @@ This section establishes the visual styling system for the Little Lemon web app,
 - **Color System**: Used brand-aligned colors from Figma, applied via CSS variables and tokens
 - **Shadows & Borders**: Rounded corners and soft shadows applied selectively for warmth and depth
 
-> 🧾 _Styling choices reflect Mediterranean warmth and editorial clarity across components._
+> _Styling choices reflect Mediterranean warmth and editorial clarity across components._
 
 ---
 
-## 🧩 Booking Page & Form
+## Booking Page & Form
 
 This section fulfills the “Defining the Bookings page” exercise by creating a modular, accessible, and editorially documented booking flow.
 
-### ✅ Components
+### Components
 
 - `BookingPage`: Contains the page layout and title
 - `BookingForm`: Controlled form with modular fields
 
-### 🧱 Form Fields
+### Form Fields
 
 - `Date`: `<input type="date">`
 - `Time`: `<select>` populated from context
@@ -95,29 +95,36 @@ This section fulfills the “Defining the Bookings page” exercise by creating 
 - `Occasion`: `<select>` with fixed options
 - `Submit`: `<button type="submit">`
 
-### ⚙️ Behavior
+### Behavior
 
 - Controlled state via `useFormReducer`
 - Validation on blur with emotional feedback
 - Time options fetched from context on open
 - Navigation to `/booking-confirmed` on submit
 
-> 🧾 _This implementation exceeds the exercise requirements by modularizing form logic, styling, and validation. It’s ready for API integration and unit testing in future steps._
+> _This implementation exceeds the exercise requirements by modularizing form logic, styling, and validation. It’s ready for API integration and unit testing in future steps._
 
 ---
 
-# Clone the repository
+### **Installation & Setup**
 
-git clone https://github.com/maitepv87/littlelemon-capstone-project.git
+Follow these steps to run the project locally:
 
-# Navigate into the project folder
+1. Clone the repository:
 
-cd littlelemon-capstone-project
+```bash
+git clone https://github.com/maitepv87/capstone-project-coursera.git
+cd capstone-project-coursera
+```
 
-# Install dependencies
+2. Install dependencie:
 
+```bash
 npm install
+```
 
-# Start the development server
+3. Start the development server:
 
+```bash
 npm start
+```
